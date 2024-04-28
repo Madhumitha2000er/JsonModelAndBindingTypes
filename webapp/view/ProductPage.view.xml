@@ -1,0 +1,17 @@
+<mvc:View controllerName="com.test.jsonmodeldemoapp.controller.ProductPage"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+         <!-- Property Binding -->
+           <Text text="{ProductJSONModel>/ProductCollection/0/SupplierName}"></Text>
+           <Button text="Test" press="checkModelData"></Button>
+           <!-- Aggregation Binding inside xml file -->
+           <List items="{ProductJSONModel>/ProductCollection}">
+               <items>
+                    <StandardListItem type="Active" press="onPressListItem" title="{ProductJSONModel>Name}" description="{ProductJSONModel>Description}" icon="sap-icon://desktop-mobile"></StandardListItem>
+                </items>
+           </List>
+        </content>
+    </Page>
+</mvc:View>
